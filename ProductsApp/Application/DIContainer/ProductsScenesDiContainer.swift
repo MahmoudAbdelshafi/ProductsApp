@@ -51,7 +51,8 @@ extension ProductsScenesDiContainer:  ProductsScreensFlowCoordinatorDependencies
    
     
     func makeProductsScreenViewController(actions: ProductsViewModelActions) -> ProductsViewController {
-        return ProductsViewController.create(with: makeProductsViewModel(actions: actions))
+        return ProductsViewController.create(with: makeProductsViewModel(actions: actions),
+                                             transitionAnimator: ViewControllerAnimator())
     }
     
     func makeProductDetailsScreenViewController(dataModel: ProductDetailsDataViewModel) -> ProductDetailsViewController {

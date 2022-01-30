@@ -9,10 +9,16 @@
   - Products is a simple iOS App built using Clean Architecture and MVVM.
 
 ## High Level Layers
-* **Domain Layer** = Entities + Use Cases + Repositories Interfaces
-* **Data Repositories Layer** = Repositories Implementations + API (Network) + Persistence DB
-* **Presentation Layer (MVVM)** = ViewModels + Views
+* **Domain Layer** = Entities + Use Cases + Repositories Interfaces.
+* **Data Repositories Layer** = Repositories Implementations + API (Network) + Persistence DB.
+* **Presentation Layer (MVVM)** = ViewModels + Views.
 
+##### Domain Layer
+* It contains Entities, FetchProductsUseCase which fetches the products data.
+
+##### Presentation Layer
+* Containts the productsViewModel with products data that are observed from the ProductsViewModel.
+**`ViewModel`** Contains the view controller business logic apstracted with INPUT and OUTPUT Protocol.
 
 ##### API (Network)
 

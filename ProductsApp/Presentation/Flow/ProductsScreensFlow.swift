@@ -17,7 +17,7 @@ final class ProductsScenesFlowCoordinator {
     private weak var navigationController: UINavigationController?
     private let dependencies: ProductsScreensFlowCoordinatorDependencies
     
-    private weak var topStoriesVC: ProductsViewController?
+    private weak var productsVC: ProductsViewController?
     
     init(navigationController: UINavigationController,
          dependencies: ProductsScreensFlowCoordinatorDependencies) {
@@ -30,11 +30,13 @@ final class ProductsScenesFlowCoordinator {
         let vc = dependencies.makeProductsScreenViewController(actions: action)
         
         navigationController?.pushViewController(vc, animated: false)
-        topStoriesVC = vc
+        productsVC = vc
     }
     
     private func navigateToProductDetailsScreen(_ dataModel: ProductDetailsDataViewModel) {
         let vc = dependencies.makeProductDetailsScreenViewController(dataModel: dataModel)
-        navigationController?.pushViewController(vc, animated: true)
+        vc.transitioningDelegate = productsVC
+        vc.modalPresentationStyle = .fullScreen
+        productsVC?.present(vc, animated: true)
     }
 }

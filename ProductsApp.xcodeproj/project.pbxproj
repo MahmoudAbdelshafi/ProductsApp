@@ -59,6 +59,7 @@
 		E59C47BB27A6DA670055DF24 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59C47BA27A6DA670055DF24 /* Loader.swift */; };
 		E59C47BD27A7014F0055DF24 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59C47BC27A7014F0055DF24 /* ImageEntity.swift */; };
 		E59C47FE27A714C30055DF24 /* ProductsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59C47FD27A714C30055DF24 /* ProductsViewModelTests.swift */; };
+		E59C480027A730B20055DF24 /* ViewControllerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59C47FF27A730B20055DF24 /* ViewControllerAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		E59C47BA27A6DA670055DF24 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		E59C47BC27A7014F0055DF24 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
 		E59C47FD27A714C30055DF24 /* ProductsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModelTests.swift; sourceTree = "<group>"; };
+		E59C47FF27A730B20055DF24 /* ViewControllerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 				E52904F027A4492E001640A8 /* PinterestLayout.swift */,
 				E52904A027A41FE5001640A8 /* Observable.swift */,
 				E59C47BA27A6DA670055DF24 /* Loader.swift */,
+				E59C47FF27A730B20055DF24 /* ViewControllerAnimator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				E52904A527A41FE5001640A8 /* CellBaseProtocol.swift in Sources */,
 				E52904DB27A42DD5001640A8 /* HTTPMethod.swift in Sources */,
 				E59C47B527A6BC540055DF24 /* Product+CoreDataProperties.swift in Sources */,
+				E59C480027A730B20055DF24 /* ViewControllerAnimator.swift in Sources */,
 				E52904AE27A420F9001640A8 /* ProductsViewController.swift in Sources */,
 				E529055227A5EEFB001640A8 /* ProductDetailsViewController.swift in Sources */,
 				E52904F827A57C4F001640A8 /* UIImageView+Download.swift in Sources */,

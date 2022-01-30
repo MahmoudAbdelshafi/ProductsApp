@@ -12,7 +12,6 @@ struct ProductsViewModelActions {
 }
 
 enum ProductsListViewModelLoading {
-    case fullScreen
     case nextPage
 }
 
@@ -120,4 +119,5 @@ extension DefultProductsViewModel {
             return 0
         }
     }
+    
 }

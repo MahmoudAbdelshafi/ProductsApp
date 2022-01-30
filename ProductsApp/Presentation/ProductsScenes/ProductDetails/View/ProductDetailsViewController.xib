@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -24,30 +25,44 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dav-Yq-3E3">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="476"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="532"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q2C-nt-K0s">
-                                    <rect key="frame" x="16" y="20" width="382" height="400"/>
+                                    <rect key="frame" x="16" y="76" width="382" height="400"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="400" id="EhW-u2-EKq"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBj-mt-bb3">
-                                    <rect key="frame" x="16" y="436" width="382" height="24"/>
+                                    <rect key="frame" x="16" y="492" width="382" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWz-d0-NSB">
+                                    <rect key="frame" x="16" y="16" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Acv-NW-1kZ"/>
+                                        <constraint firstAttribute="width" constant="40" id="p59-q4-2tB"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="xmark.circle" catalog="system" title=" "/>
+                                    <connections>
+                                        <action selector="dismissBtnPressed:" destination="-1" eventType="touchUpInside" id="0b6-IH-iqY"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="q2C-nt-K0s" firstAttribute="top" secondItem="Dav-Yq-3E3" secondAttribute="top" constant="20" id="HvN-XT-n0f"/>
+                                <constraint firstItem="YWz-d0-NSB" firstAttribute="leading" secondItem="Dav-Yq-3E3" secondAttribute="leading" constant="16" id="5W5-bo-d9e"/>
                                 <constraint firstAttribute="trailing" secondItem="q2C-nt-K0s" secondAttribute="trailing" constant="16" id="QGB-QA-xNv"/>
+                                <constraint firstItem="q2C-nt-K0s" firstAttribute="top" secondItem="YWz-d0-NSB" secondAttribute="bottom" constant="20" id="Vbb-BE-1dd"/>
                                 <constraint firstItem="BBj-mt-bb3" firstAttribute="leading" secondItem="Dav-Yq-3E3" secondAttribute="leading" constant="16" id="WUn-zo-LCc"/>
                                 <constraint firstAttribute="trailing" secondItem="BBj-mt-bb3" secondAttribute="trailing" constant="16" id="ZPf-Fr-lWl"/>
                                 <constraint firstItem="BBj-mt-bb3" firstAttribute="top" secondItem="q2C-nt-K0s" secondAttribute="bottom" constant="16" id="ZiO-vf-ZeX"/>
                                 <constraint firstItem="q2C-nt-K0s" firstAttribute="leading" secondItem="Dav-Yq-3E3" secondAttribute="leading" constant="16" id="ZnA-Sa-GzB"/>
                                 <constraint firstAttribute="bottom" secondItem="BBj-mt-bb3" secondAttribute="bottom" constant="16" id="chT-Jo-pzK"/>
+                                <constraint firstItem="YWz-d0-NSB" firstAttribute="top" secondItem="Dav-Yq-3E3" secondAttribute="top" constant="16" id="tg1-Wg-XyA"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -72,6 +87,7 @@
         </view>
     </objects>
     <resources>
+        <image name="xmark.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

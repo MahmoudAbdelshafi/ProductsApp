@@ -41,6 +41,14 @@ final class ProductDetailsViewController: UIViewController {
         bind(to: viewModel)
     }
     
+    //MARK: - IBAtions
+    
+    /// Dismiss UIButton Action To Dismiss the ViewController
+    /// - Parameter sender: Refares to the sender of the action
+    @IBAction func dismissBtnPressed(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
     //MARK: - Private Functions
     
     /// Function to bind the ProductDetailsViewModelOutput observable data types

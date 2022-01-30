@@ -12,7 +12,9 @@ final class ProductsViewController: UIViewController {
     //MARK: - Properties
     
     private var viewModel: ProductsViewModel!
+    private var transitionAnimator: ViewControllerAnimatorProtocol!
     private let navTitle = "Products list"
+    private var currentVisibleCell = UICollectionViewCell()
     
     //MARK: - IBoutlets
     
@@ -20,9 +22,10 @@ final class ProductsViewController: UIViewController {
     
     //MARK: - Create
     
-    static func create(with viewModel: ProductsViewModel) -> ProductsViewController {
+    static func create(with viewModel: ProductsViewModel, transitionAnimator: ViewControllerAnimatorProtocol) -> ProductsViewController {
         let vc = ProductsViewController.loadFromNib()
         vc.viewModel = viewModel
+        vc.transitionAnimator = transitionAnimator 
         return vc
     }
     
@@ -95,7 +98,7 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
                 as? ProductsCollectionViewCell else {
                     fatalError("Couldn't dequeue \(ProductsCollectionViewCell.self)")
                 }
-        
+        self.currentVisibleCell = cell
         cell.configure(product: viewModel.products.value.products[indexPath.row])
         return cell
     }
@@ -125,5 +128,21 @@ extension ProductsViewController {
         if indexPath.row == viewModel.products.value.products.count - 1 {
             viewModel.loadNextPage()
         }
+    }
+}
+
+//MARK: - Transition Delegate
+
+extension ProductsViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transitionAnimator.originFrame = currentVisibleCell.contentView.frame
+        transitionAnimator.presenting = true
+        return transitionAnimator
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transitionAnimator.presenting = false
+        return transitionAnimator
     }
 }
