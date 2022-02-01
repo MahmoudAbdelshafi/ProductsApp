@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ProductsResponseStorage {
-    func getResponse(for request: ProductResponseDTO, completion: @escaping (Result<ProductResponseDTO?, CoreDataStorageError>) -> Void)
-    func save(response: ProductResponseDTO, for requestDto: ProductResponseDTO)
+    func getResponse(completion: @escaping (Result<[ProductResponseDTO], CoreDataStorageError>) -> Void)
+    func save(response: ProductsDTO, completion: @escaping (Result<[ProductResponseDTO], Error>) -> Void)
 }

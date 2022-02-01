@@ -43,6 +43,7 @@ final class DefultProductsViewModel: ProductsViewModel {
     var hasMorePages: Bool { currentPage < totalPageCount }
     private var totalPageCount: Int = 5
     private let actions: ProductsViewModelActions?
+    private var firstTimeLoad = true
     
     //MARK: - OUTPUT
     
@@ -63,7 +64,7 @@ final class DefultProductsViewModel: ProductsViewModel {
     
     private func load(loading: ProductsListViewModelLoading) {
         self.loading.value = loading
-        Loader.show()
+        firstTimeLoad ? Loader.show() : Loader.hide()
         fetchProductsUseCase.execute(completion: { result in
             Loader.hide()
             switch result {
@@ -78,6 +79,7 @@ final class DefultProductsViewModel: ProductsViewModel {
     }
     
     private func appendPage(productsPage: ProductsPage) {
+        firstTimeLoad = false
         self.products.value.products.append(contentsOf: productsPage.products)
         currentPage += 1
     }

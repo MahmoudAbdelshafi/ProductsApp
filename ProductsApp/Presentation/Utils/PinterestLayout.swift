@@ -43,7 +43,7 @@ class PinterestLayout: UICollectionViewLayout {
   private let cellPadding: CGFloat = 6
 
   // 3
-  private var cache: [UICollectionViewLayoutAttributes] = []
+   var cache: [UICollectionViewLayoutAttributes] = []
 
   // 4
   private var contentHeight: CGFloat = 0
@@ -63,6 +63,7 @@ class PinterestLayout: UICollectionViewLayout {
   
   override func prepare() {
     // 1
+      
     guard
       cache.isEmpty == true,
       let collectionView = collectionView

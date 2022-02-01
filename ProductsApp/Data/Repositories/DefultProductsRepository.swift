@@ -19,20 +19,13 @@ final class DefultProductsRepository {
 }
 
 extension DefultProductsRepository: ProductsRepository {
+    
     func fetchProductsList(completion: @escaping (Result<ProductsPage, Error>) -> Void) {
-        
         baseAPI.request(router: .getProducts) { (result: Result<[ProductResponseDTO], ErrorType>) in
-            ///Manage caching
-            let DTO = ProductResponseDTO()
-            self.cache.getResponse(for: DTO) { result in
 
-//                if case let .success(responseDTO?) = result {
-//                    //cached(responseDTO.toDomain())
-//                }
-            }
             switch result {
             case .success(let products):
-                let responseDTO = ProductsDTO(products: products).toDomain()
+                let responseDTO = ProductsDTO(products: products).toProductsPageDomain()
                 completion(.success(responseDTO))
             case .failure(let error):
                 completion(.failure(error))

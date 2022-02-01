@@ -45,8 +45,8 @@
                                         <constraint firstAttribute="height" constant="40" id="Acv-NW-1kZ"/>
                                         <constraint firstAttribute="width" constant="40" id="p59-q4-2tB"/>
                                     </constraints>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="xmark.circle" catalog="system" title=" "/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title=" " image="xmark.circle" catalog="system"/>
                                     <connections>
                                         <action selector="dismissBtnPressed:" destination="-1" eventType="touchUpInside" id="0b6-IH-iqY"/>
                                     </connections>

@@ -19,6 +19,14 @@ final class ProductsScenesDiContainer {
         return DefultProductsRepository(baseAPI: makeBaseAPI(), cache: productsResponseCache)
     }
     
+    func makeProductsPersistentRepository() -> ProductsPersistentRepository {
+        return DefultProductsPersistentRepository(productsResponseStorage: DefultProductsPersistentRepository(productsResponseStorage: CoreDataProductsResponseStorage()) as! ProductsResponseStorage)
+    }
+    
+    func makeDefultProductsPersistentRepo() -> ProductsPersistentRepository {
+        return DefultProductsPersistentRepository(productsResponseStorage: CoreDataProductsResponseStorage())
+    }
+    
     func makeBaseAPI() -> BaseAPI {
         return BaseAPI.sharedInstance
     }
@@ -26,9 +34,11 @@ final class ProductsScenesDiContainer {
     // MARK: - Use Cases
     
     func makeFetchProductsUseCase() -> FetchProductsUseCase {
-        return DefaultFetchTopStoriesUseCase(productsRepository: makeDefultProductsRepository())
+        return DefaultFetchTopStoriesUseCase(productsRepository: makeDefultProductsRepository(),
+                                             productsPersistentRepository: makeDefultProductsPersistentRepo())
     }
     
+    //MARK: - View Models
     func makeProductsViewModel(actions: ProductsViewModelActions) -> ProductsViewModel {
         return DefultProductsViewModel(fetchProductsUseCase: makeFetchProductsUseCase(), actions: actions)
     }

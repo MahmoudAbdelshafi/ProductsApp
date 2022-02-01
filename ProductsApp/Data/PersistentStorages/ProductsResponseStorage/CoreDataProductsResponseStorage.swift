@@ -21,42 +21,53 @@ extension CoreDataProductsResponseStorage {
     
     // MARK: - Private
     
-    private func fetchRequest() -> NSFetchRequest<Product> {
-        let request: NSFetchRequest = Product.fetchRequest()
-        request.predicate = NSPredicate(format: "%K = %@ AND %K = %d")
-        return request
+    private func clearData() {
+        coreDataStorage.performBackgroundTask { context in
+            do {
+                let fetchRequest = Product.fetchRequest()
+                let requestEntity = try context.fetch(fetchRequest)
+                _ = requestEntity.map {context.delete($0)}
+                try context.save()
+            } catch {
+                print(error)
+            }
+        }
     }
-    
-    //    private func deleteResponse(for requestDto: Product, in context: NSManagedObjectContext) {
-    //        let request = fetchRequest(for: requestDto.id)
-    //
-    //        do {
-    //            if let result = try context.fetch(request).first {
-    //                context.delete(result)
-    //            }
-    //        } catch {
-    //            print(error)
-    //        }
-    //    }
 }
 
 extension CoreDataProductsResponseStorage: ProductsResponseStorage {
-    func getResponse(for request: ProductResponseDTO, completion: @escaping (Result<ProductResponseDTO?, CoreDataStorageError>) -> Void) {
+    
+    func getResponse(completion: @escaping (Result<[ProductResponseDTO],
+                                            CoreDataStorageError>) -> Void) {
         coreDataStorage.performBackgroundTask { context in
-            //            do {
-            //                let fetchRequest = self.fetchRequest()
-            //                let requestEntity = try context.fetch(fetchRequest).first
-            //
-            //
-            //            } catch {
-            //                completion(.failure(CoreDataStorageError.readError(error)))
-            //            }
+            do {
+                let fetchRequest = Product.fetchRequest()
+                let requestEntity = try context.fetch(fetchRequest)
+                let coreDataDTO = Product.toResponseDomain(requestEntity)
+                completion(.success(coreDataDTO))
+            } catch {
+                completion(.failure(CoreDataStorageError.readError(error)))
+            }
         }
     }
     
-    func save(response: ProductResponseDTO, for requestDto: ProductResponseDTO) {
+    func save(response: ProductsDTO,
+              completion: @escaping (Result<[ProductResponseDTO], Error>) -> Void) {
+        coreDataStorage.performBackgroundTask { context in
+            self.clearData()
+            for product in response.products {
+                if let _ = product.toProductEntityDomain(context: context) {
+                    do {
+                        try context.save()
+                    } catch {
+                        ///Error 
+                    }
+                }
+                
+            }
+            
+        }
         
     }
-    
     
 }

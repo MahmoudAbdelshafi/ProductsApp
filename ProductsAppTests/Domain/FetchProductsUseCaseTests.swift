@@ -14,7 +14,7 @@ class FetchProductsUseCaseTests: XCTestCase {
         let image = Image(width: 300, height: 200, url: "https:")
         let DTO1 = ProductResponseDTO(id: 1, productDescription: "product1", image: image, price: 10)
         let DTO2 = ProductResponseDTO(id: 2, productDescription: "product2", image: image, price: 20)
-        let productsDTO = ProductsDTO(products: [DTO1, DTO2]).toDomain()
+        let productsDTO = ProductsDTO(products: [DTO1, DTO2]).toProductsPageDomain()
         return productsDTO
     }()
     
@@ -25,12 +25,25 @@ class FetchProductsUseCaseTests: XCTestCase {
         }
     }
     
+    struct ProductsPersistentRepositoryMock: ProductsPersistentRepository {
+        func fetchRecentsQueries(completion: @escaping (Result<ProductsPage, Error>) -> Void) {
+            
+        }
+        
+        func saveRecentQuery(products: ProductsPage, completion: @escaping (Result<ProductsPage, Error>) -> Void) {
+            
+        }
+        
+        
+    }
+    
     func testFetchProductsUseCase_whenSuccessfullyFetchesProducts() {
         //Arrange
         let expectation = self.expectation(description: "Successfully Fetches Products")
         expectation.expectedFulfillmentCount = 1
         let repo = ProductsRepositoryMock(result:.success(FetchProductsUseCaseTests.productsPages))
-        let _ = DefaultFetchTopStoriesUseCase(productsRepository: repo)
+        let pressistentRepo = ProductsPersistentRepositoryMock()
+        let _ = DefaultFetchTopStoriesUseCase(productsRepository: repo, productsPersistentRepository: pressistentRepo)
         
         // Act
         var recents = ProductsPage(products: [])

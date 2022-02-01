@@ -51,7 +51,14 @@ extension ProductsViewController {
     
     
     private func updateProducts(_ products: ProductsPage) {
+        self.collectionView.reloadInputViews()
         self.collectionView.reloadData()
+        if let layout = collectionView
+            .collectionViewLayout as? PinterestLayout {
+            //layout.delegate = self
+            layout.cache.removeAll()
+        }
+        
     }
     
     private func showError(_ error: String) {
