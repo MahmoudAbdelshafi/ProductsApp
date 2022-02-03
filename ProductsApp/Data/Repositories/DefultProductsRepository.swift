@@ -43,7 +43,6 @@ final class DefultProductsRepository {
 extension DefultProductsRepository: ProductsRepository {
     
     func fetchProductsList(completion: @escaping (Result<ProductsPage, Error>) -> Void) {
-        
         baseAPI.request(router: .getProducts) { (result: Result<[ProductResponseDTO], ErrorType>) in
             switch result {
             case .success(let products):

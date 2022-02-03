@@ -31,11 +31,6 @@ final class DefaultFetchTopStoriesUseCase: FetchProductsUseCase {
     func execute(completion: @escaping (Result<ProductsPage, Error>) -> Void) {
         productsRepository.fetchProductsList { result in
             completion(result)
-            
-//            if case .success = result {
-//                guard let products = try? result.get() else { return }
-//                self.productsPersistentRepository.saveRecentProducts(products: products) { _ in }
-//            }
         }
     }
 }
