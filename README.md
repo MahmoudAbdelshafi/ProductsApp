@@ -6,7 +6,7 @@
  
  #### Slather coverage
  
- * Run this cmd to generate test covarage report
+ * Run this command to generate test covarage report
  
  ```sh
 slather coverage --html  --scheme ProductsApp --show ./ProductsApp.xcodeproj/
