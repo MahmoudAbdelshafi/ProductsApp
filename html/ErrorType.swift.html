@@ -9,7 +9,7 @@
 <h2 class="cov_title">
 <span>Coverage for "ErrorType.swift" : </span><span>Lines: </span><span class="cov_low">0.00%</span><span> Branches: </span><span class="cov_low">0.00%</span>
 </h2>
-<h4 class="cov_subtitle">(0 of 18 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(0 of 20 relevant lines covered)</h4>
 <h4 class="cov_filepath">ProductsApp/Infrastructure/Network/Service/ErrorType.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -99,111 +99,126 @@
 </tr>
 <tr class="never">
 <td class="num">18</td>
-<td class="src"><pre><code class="objc">    case errorMessage(_ error: String)</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">19</td>
 <td class="src"><pre><code class="objc">    case decodingError</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
+<td class="num">19</td>
+<td class="src"><pre><code class="objc">    case noInternet</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
 <td class="num">20</td>
+<td class="src"><pre><code class="objc">    case error(Error)</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">21</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="missed">
-<td class="num">21</td>
+<td class="num">22</td>
 <td class="src"><pre><code class="objc">    var errorDescription: String? {</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">22</td>
+<td class="num">23</td>
 <td class="src"><pre><code class="objc">        switch self {</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">23</td>
+<td class="num">24</td>
 <td class="src"><pre><code class="objc">        case .parseUrlFail:</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">24</td>
+<td class="num">25</td>
 <td class="src"><pre><code class="objc">            return "Cannot initial URL object."</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">25</td>
+<td class="num">26</td>
 <td class="src"><pre><code class="objc">        case .notFound:</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">26</td>
+<td class="num">27</td>
 <td class="src"><pre><code class="objc">            return "Not Found"</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">27</td>
+<td class="num">28</td>
 <td class="src"><pre><code class="objc">        case .validationError:</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">28</td>
+<td class="num">29</td>
 <td class="src"><pre><code class="objc">            return "Validation Errors"</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">29</td>
+<td class="num">30</td>
 <td class="src"><pre><code class="objc">        case .serverError:</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">30</td>
+<td class="num">31</td>
 <td class="src"><pre><code class="objc">            return "Internal Server Error"</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">31</td>
+<td class="num">32</td>
 <td class="src"><pre><code class="objc">        case .defaultError:</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">32</td>
+<td class="num">33</td>
 <td class="src"><pre><code class="objc">            return "Something went wrong."</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">33</td>
-<td class="src"><pre><code class="objc">        case .errorMessage(let error):</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
 <td class="num">34</td>
-<td class="src"><pre><code class="objc">            return error</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
-<td class="num">35</td>
 <td class="src"><pre><code class="objc">        case .decodingError:</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">36</td>
+<td class="num">35</td>
 <td class="src"><pre><code class="objc">            return "Couldn't decode data!"</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
+<td class="num">36</td>
+<td class="src"><pre><code class="objc">        case .noInternet:</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
 <td class="num">37</td>
-<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="src"><pre><code class="objc">            return "No Internet Connection"</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
 <td class="num">38</td>
+<td class="src"><pre><code class="objc">        case .error:</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">39</td>
+<td class="src"><pre><code class="objc">            return self.localizedDescription</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">40</td>
+<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">41</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="never">
-<td class="num">39</td>
+<td class="num">42</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>

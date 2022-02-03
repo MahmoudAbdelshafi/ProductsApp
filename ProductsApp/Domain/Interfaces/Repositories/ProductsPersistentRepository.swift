@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ProductsPersistentRepository {
-    func fetchRecentsQueries(completion: @escaping (Result<ProductsPage, Error>) -> Void)
-    func saveRecentQuery(products: ProductsPage, completion: @escaping (Result<ProductsPage, Error>) -> Void)
+    func fetchRecentProducts(completion: @escaping (Result<ProductsPage, Error>) -> Void)
+    func saveRecentProducts(products: ProductsPage, completion: @escaping (Result<ProductsPage, Error>) -> Void)
 }

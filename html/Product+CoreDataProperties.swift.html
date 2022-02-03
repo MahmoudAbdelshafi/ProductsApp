@@ -7,9 +7,9 @@
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "Product+CoreDataProperties.swift" : </span><span>Lines: </span><span class="cov_low">36.00%</span><span> Branches: </span><span class="cov_low">27.27%</span>
+<span>Coverage for "Product+CoreDataProperties.swift" : </span><span>Lines: </span><span class="cov_low">46.34%</span><span> Branches: </span><span class="cov_low">50.00%</span>
 </h2>
-<h4 class="cov_subtitle">(9 of 25 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(19 of 41 relevant lines covered)</h4>
 <h4 class="cov_filepath">ProductsApp/Data/PersistentStorages/Entities/Product+CoreDataProperties.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -85,17 +85,17 @@
 <tr class="covered">
 <td class="num">15</td>
 <td class="src"><pre><code class="objc">    @nonobjc public class func fetchRequest() -&gt; NSFetchRequest&lt;Product&gt; {</code></pre></td>
-<td class="coverage">8x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">16</td>
 <td class="src"><pre><code class="objc">        return NSFetchRequest&lt;Product&gt;(entityName: "Product")</code></pre></td>
-<td class="coverage">8x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">17</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">8x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="never">
 <td class="num">18</td>
@@ -105,17 +105,17 @@
 <tr class="covered">
 <td class="num">19</td>
 <td class="src"><pre><code class="objc">    @objc public class func insertProductObject(context: NSManagedObjectContext) -&gt; NSManagedObject {</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">20</td>
 <td class="src"><pre><code class="objc">        return NSEntityDescription.insertNewObject(forEntityName: "Product", into: context)</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">21</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="never">
 <td class="num">22</td>
@@ -125,17 +125,17 @@
 <tr class="covered">
 <td class="num">23</td>
 <td class="src"><pre><code class="objc">    @objc public class func insertCoreDataImageObject(context: NSManagedObjectContext) -&gt; NSManagedObject {</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">24</td>
 <td class="src"><pre><code class="objc">        return NSEntityDescription.insertNewObject(forEntityName: "CoreDataImage", into: context)</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">25</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="never">
 <td class="num">26</td>
@@ -209,7 +209,7 @@
 </tr>
 <tr class="missed">
 <td class="num">40</td>
-<td class="src"><pre><code class="objc">    static func toResponseDomain(_ savedProducts: [Product]) -&gt; [ProductResponseDTO] {</code></pre></td>
+<td class="src"><pre><code class="objc">    static func toProductResponse(_ savedProducts: [Product]) -&gt; [ProductResponseDTO] {</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
@@ -289,6 +289,101 @@
 </tr>
 <tr class="never">
 <td class="num">56</td>
+<td class="src"><pre><code class="objc">}</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">57</td>
+<td class="src"><pre><code class="objc"></code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">58</td>
+<td class="src"><pre><code class="objc">extension ProductResponseDTO {</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="covered">
+<td class="num">59</td>
+<td class="src"><pre><code class="objc">     func toProductCoreDataEntityForInserting(context: NSManagedObjectContext) -&gt; Product? {</code></pre></td>
+<td class="coverage">140x</td>
+</tr>
+<tr class="covered">
+<td class="num">60</td>
+<td class="src"><pre><code class="objc">        if let productEntity = Product.insertProductObject(context: context) as? Product {</code></pre></td>
+<td class="coverage">140x</td>
+</tr>
+<tr class="missed">
+<td class="num">61</td>
+<td class="src"><pre><code class="objc">            productEntity.price = Int16(self.price ?? 0)</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="covered">
+<td class="num">62</td>
+<td class="src"><pre><code class="objc">            productEntity.productDescription = self.productDescription</code></pre></td>
+<td class="coverage">140x</td>
+</tr>
+<tr class="missed">
+<td class="num">63</td>
+<td class="src"><pre><code class="objc">            productEntity.id = Int16(self.id ?? 0)</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="covered">
+<td class="num">64</td>
+<td class="src"><pre><code class="objc">            </code></pre></td>
+<td class="coverage">140x</td>
+</tr>
+<tr class="covered">
+<td class="num">65</td>
+<td class="src"><pre><code class="objc">            if let imageEntity = Product.insertCoreDataImageObject(context: context) as? CoreDataImage {</code></pre></td>
+<td class="coverage">140x</td>
+</tr>
+<tr class="missed">
+<td class="num">66</td>
+<td class="src"><pre><code class="objc">                imageEntity.height = Int16(self.image?.height ?? 0)</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">67</td>
+<td class="src"><pre><code class="objc">                imageEntity.width = Int16(self.image?.width ?? 0)</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="covered">
+<td class="num">68</td>
+<td class="src"><pre><code class="objc">                imageEntity.url = self.image?.url</code></pre></td>
+<td class="coverage">140x</td>
+</tr>
+<tr class="covered">
+<td class="num">69</td>
+<td class="src"><pre><code class="objc">                productEntity.image = imageEntity</code></pre></td>
+<td class="coverage">140x</td>
+</tr>
+<tr class="covered">
+<td class="num">70</td>
+<td class="src"><pre><code class="objc">            }</code></pre></td>
+<td class="coverage">140x</td>
+</tr>
+<tr class="covered">
+<td class="num">71</td>
+<td class="src"><pre><code class="objc">            return productEntity</code></pre></td>
+<td class="coverage">140x</td>
+</tr>
+<tr class="missed">
+<td class="num">72</td>
+<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">73</td>
+<td class="src"><pre><code class="objc">       return nil</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="covered">
+<td class="num">74</td>
+<td class="src"><pre><code class="objc">    }</code></pre></td>
+<td class="coverage">140x</td>
+</tr>
+<tr class="never">
+<td class="num">75</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>

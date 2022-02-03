@@ -41,7 +41,7 @@ final class DefultProductsViewModel: ProductsViewModel {
     
     var currentPage: Int = 0
     var hasMorePages: Bool { currentPage < totalPageCount }
-    private var totalPageCount: Int = 5
+    private var totalPageCount: Int = 200
     private let actions: ProductsViewModelActions?
     private var firstTimeLoad = true
     
@@ -113,12 +113,13 @@ extension DefultProductsViewModel {
 extension DefultProductsViewModel {
     
     func collectionViewHeight(indexPath: IndexPath) -> Int {
+        print("height: ", products.value.products[indexPath.row].image?.height)
         if let height = products.value.products[indexPath.row].image?.height {
             guard let discriptionCount = products.value.products[indexPath.row]
-                    .productDescription?.count else { return 0 }
+                    .productDescription?.count else { return 300 }
             return Int(height + ( discriptionCount * 2))
         } else {
-            return 0
+            return 300
         }
     }
     

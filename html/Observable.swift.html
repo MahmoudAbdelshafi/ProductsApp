@@ -95,7 +95,7 @@
 <tr class="covered">
 <td class="num">17</td>
 <td class="src"><pre><code class="objc">    private var observers = [Observer&lt;Value&gt;]()</code></pre></td>
-<td class="coverage">27x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="never">
 <td class="num">18</td>
@@ -110,7 +110,7 @@
 <tr class="covered">
 <td class="num">20</td>
 <td class="src"><pre><code class="objc">        didSet { notifyObservers() }</code></pre></td>
-<td class="coverage">27x</td>
+<td class="coverage">28x</td>
 </tr>
 <tr class="never">
 <td class="num">21</td>
@@ -125,17 +125,17 @@
 <tr class="covered">
 <td class="num">23</td>
 <td class="src"><pre><code class="objc">    public init(_ value: Value) {</code></pre></td>
-<td class="coverage">27x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">24</td>
 <td class="src"><pre><code class="objc">        self.value = value</code></pre></td>
-<td class="coverage">27x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">25</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">27x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="never">
 <td class="num">26</td>
@@ -190,27 +190,27 @@
 <tr class="covered">
 <td class="num">36</td>
 <td class="src"><pre><code class="objc">    private func notifyObservers() {</code></pre></td>
-<td class="coverage">27x</td>
+<td class="coverage">28x</td>
 </tr>
 <tr class="covered">
 <td class="num">37</td>
 <td class="src"><pre><code class="objc">        for observer in observers {</code></pre></td>
-<td class="coverage">8x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">38</td>
 <td class="src"><pre><code class="objc">            DispatchQueue.main.async { observer.block(self.value) }</code></pre></td>
-<td class="coverage">8x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">39</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">27x</td>
+<td class="coverage">28x</td>
 </tr>
 <tr class="covered">
 <td class="num">40</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">27x</td>
+<td class="coverage">28x</td>
 </tr>
 <tr class="never">
 <td class="num">41</td>

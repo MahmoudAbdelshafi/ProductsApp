@@ -9,7 +9,7 @@ import Foundation
 
 struct ProductsPage {
     let page: Int = 0
-    let totalPages: Int = 5
+    let totalPages: Int = 200
     var products: [ProductEntity]
 }
 

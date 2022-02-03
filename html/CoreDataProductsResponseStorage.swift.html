@@ -7,9 +7,9 @@
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "CoreDataProductsResponseStorage.swift" : </span><span>Lines: </span><span class="cov_low">64.15%</span><span> Branches: </span><span class="cov_low">64.86%</span>
+<span>Coverage for "CoreDataProductsResponseStorage.swift" : </span><span>Lines: </span><span class="cov_low">62.22%</span><span> Branches: </span><span class="cov_low">62.07%</span>
 </h2>
-<h4 class="cov_subtitle">(34 of 53 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(28 of 45 relevant lines covered)</h4>
 <h4 class="cov_filepath">ProductsApp/Data/PersistentStorages/ProductsResponseStorage/CoreDataProductsResponseStorage.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -129,38 +129,38 @@
 </tr>
 <tr class="covered">
 <td class="num">24</td>
-<td class="src"><pre><code class="objc">        private func clearData() {</code></pre></td>
-<td class="coverage">8x</td>
+<td class="src"><pre><code class="objc">    private func clearData() {</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">25</td>
-<td class="src"><pre><code class="objc">            coreDataStorage.performBackgroundTask { context in</code></pre></td>
-<td class="coverage">8x</td>
+<td class="src"><pre><code class="objc">        coreDataStorage.performBackgroundTask { context in</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">26</td>
 <td class="src"><pre><code class="objc">            do {</code></pre></td>
-<td class="coverage">8x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">27</td>
 <td class="src"><pre><code class="objc">                let fetchRequest = Product.fetchRequest()</code></pre></td>
-<td class="coverage">8x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">28</td>
 <td class="src"><pre><code class="objc">                let requestEntity = try context.fetch(fetchRequest)</code></pre></td>
-<td class="coverage">8x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">29</td>
 <td class="src"><pre><code class="objc">                _ = requestEntity.map {context.delete($0)}</code></pre></td>
-<td class="coverage">320x</td>
+<td class="coverage">280x</td>
 </tr>
 <tr class="covered">
 <td class="num">30</td>
-<td class="src"><pre><code class="objc">               try context.save()</code></pre></td>
-<td class="coverage">8x</td>
+<td class="src"><pre><code class="objc">                try context.save()</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="missed">
 <td class="num">31</td>
@@ -175,17 +175,17 @@
 <tr class="covered">
 <td class="num">33</td>
 <td class="src"><pre><code class="objc">            }</code></pre></td>
-<td class="coverage">8x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">34</td>
-<td class="src"><pre><code class="objc">            }</code></pre></td>
-<td class="coverage">8x</td>
+<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">35</td>
-<td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">8x</td>
+<td class="src"><pre><code class="objc">    }</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="never">
 <td class="num">36</td>
@@ -239,186 +239,146 @@
 </tr>
 <tr class="missed">
 <td class="num">46</td>
-<td class="src"><pre><code class="objc">                let coreDataDTO = Product.toResponseDomain(requestEntity)</code></pre></td>
+<td class="src"><pre><code class="objc">                var coreDataDTO = Product.toProductResponse(requestEntity)</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
 <td class="num">47</td>
-<td class="src"><pre><code class="objc">                completion(.success(coreDataDTO))</code></pre></td>
+<td class="src"><pre><code class="objc">                coreDataDTO.removeAll(where: { product in {product.image?.height == 0}()})</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
 <td class="num">48</td>
-<td class="src"><pre><code class="objc">            } catch {</code></pre></td>
+<td class="src"><pre><code class="objc">                completion(.success(coreDataDTO))</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
 <td class="num">49</td>
-<td class="src"><pre><code class="objc">                completion(.failure(CoreDataStorageError.readError(error)))</code></pre></td>
+<td class="src"><pre><code class="objc">            } catch {</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
 <td class="num">50</td>
-<td class="src"><pre><code class="objc">            }</code></pre></td>
+<td class="src"><pre><code class="objc">                completion(.failure(CoreDataStorageError.readError(error)))</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
 <td class="num">51</td>
-<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="src"><pre><code class="objc">            }</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
 <td class="num">52</td>
+<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">53</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="never">
-<td class="num">53</td>
+<td class="num">54</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">54</td>
+<td class="num">55</td>
 <td class="src"><pre><code class="objc">    func save(response: ProductsDTO,</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="covered">
-<td class="num">55</td>
-<td class="src"><pre><code class="objc">              completion: @escaping (Result&lt;[ProductResponseDTO], Error&gt;) -&gt; Void) {</code></pre></td>
-<td class="coverage">8x</td>
-</tr>
-<tr class="covered">
 <td class="num">56</td>
-<td class="src"><pre><code class="objc">        coreDataStorage.performBackgroundTask { context in</code></pre></td>
-<td class="coverage">8x</td>
+<td class="src"><pre><code class="objc">              completion: @escaping (Result&lt;[ProductResponseDTO], Error&gt;) -&gt; Void) {</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">57</td>
-<td class="src"><pre><code class="objc">            self.clearData()</code></pre></td>
-<td class="coverage">8x</td>
+<td class="src"><pre><code class="objc">        coreDataStorage.performBackgroundTask { context in</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">58</td>
-<td class="src"><pre><code class="objc">            for i in response.products {</code></pre></td>
-<td class="coverage">160x</td>
+<td class="src"><pre><code class="objc">            self.clearData()</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">59</td>
-<td class="src"><pre><code class="objc">                if let productEntity = Product.insertProductObject(context: context) as? Product {</code></pre></td>
-<td class="coverage">160x</td>
+<td class="src"><pre><code class="objc">            for product in response.products {</code></pre></td>
+<td class="coverage">140x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">60</td>
-<td class="src"><pre><code class="objc">                    productEntity.price = Int16(i.price ?? 0)</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">                if let _ = product.toProductCoreDataEntityForInserting(context: context) {</code></pre></td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">61</td>
-<td class="src"><pre><code class="objc">                    productEntity.productDescription = i.productDescription</code></pre></td>
-<td class="coverage">160x</td>
+<td class="src"><pre><code class="objc">                    do {</code></pre></td>
+<td class="coverage">140x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">62</td>
-<td class="src"><pre><code class="objc">                    productEntity.id = Int16(i.id ?? 0)</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">                        try context.save()</code></pre></td>
+<td class="coverage">140x</td>
 </tr>
-<tr class="covered">
+<tr class="missed">
 <td class="num">63</td>
-<td class="src"><pre><code class="objc">                    </code></pre></td>
-<td class="coverage">160x</td>
+<td class="src"><pre><code class="objc">                    } catch {</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">64</td>
+<td class="src"><pre><code class="objc">                        ///Error </code></pre></td>
+<td class="coverage">!</td>
 </tr>
 <tr class="covered">
-<td class="num">64</td>
-<td class="src"><pre><code class="objc">                    if let imageEntity = Product.insertCoreDataImageObject(context: context) as? CoreDataImage {</code></pre></td>
-<td class="coverage">160x</td>
-</tr>
-<tr class="missed">
 <td class="num">65</td>
-<td class="src"><pre><code class="objc">                        imageEntity.height = Int16(i.image?.height ?? 0)</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">                    }</code></pre></td>
+<td class="coverage">140x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">66</td>
-<td class="src"><pre><code class="objc">                        imageEntity.width = Int16(i.image?.width ?? 0)</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">                }</code></pre></td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">67</td>
-<td class="src"><pre><code class="objc">                        imageEntity.url = i.image?.url</code></pre></td>
-<td class="coverage">160x</td>
+<td class="src"><pre><code class="objc">                </code></pre></td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">68</td>
-<td class="src"><pre><code class="objc">                        productEntity.image = imageEntity</code></pre></td>
-<td class="coverage">160x</td>
+<td class="src"><pre><code class="objc">            }</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">69</td>
-<td class="src"><pre><code class="objc">                    }</code></pre></td>
-<td class="coverage">160x</td>
+<td class="src"><pre><code class="objc">            </code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">70</td>
-<td class="src"><pre><code class="objc">                }</code></pre></td>
-<td class="coverage">160x</td>
+<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">71</td>
-<td class="src"><pre><code class="objc">                do {</code></pre></td>
-<td class="coverage">160x</td>
+<td class="src"><pre><code class="objc">        </code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">72</td>
-<td class="src"><pre><code class="objc">                    try context.save()</code></pre></td>
-<td class="coverage">160x</td>
-</tr>
-<tr class="missed">
-<td class="num">73</td>
-<td class="src"><pre><code class="objc">                } catch {</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="covered">
-<td class="num">74</td>
-<td class="src"><pre><code class="objc">                }</code></pre></td>
-<td class="coverage">160x</td>
-</tr>
-<tr class="covered">
-<td class="num">75</td>
-<td class="src"><pre><code class="objc">                </code></pre></td>
-<td class="coverage">160x</td>
-</tr>
-<tr class="covered">
-<td class="num">76</td>
-<td class="src"><pre><code class="objc">            }</code></pre></td>
-<td class="coverage">8x</td>
-</tr>
-<tr class="covered">
-<td class="num">77</td>
-<td class="src"><pre><code class="objc">            </code></pre></td>
-<td class="coverage">8x</td>
-</tr>
-<tr class="covered">
-<td class="num">78</td>
-<td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">8x</td>
-</tr>
-<tr class="covered">
-<td class="num">79</td>
-<td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">8x</td>
-</tr>
-<tr class="covered">
-<td class="num">80</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">8x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="never">
-<td class="num">81</td>
+<td class="num">73</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">82</td>
+<td class="num">74</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>

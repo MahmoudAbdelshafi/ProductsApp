@@ -55,7 +55,6 @@ extension ProductsViewController {
         self.collectionView.reloadData()
         if let layout = collectionView
             .collectionViewLayout as? PinterestLayout {
-            //layout.delegate = self
             layout.cache.removeAll()
         }
         

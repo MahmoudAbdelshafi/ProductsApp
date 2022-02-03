@@ -30,29 +30,12 @@ final class DefaultFetchTopStoriesUseCase: FetchProductsUseCase {
     
     func execute(completion: @escaping (Result<ProductsPage, Error>) -> Void) {
         productsRepository.fetchProductsList { result in
+            completion(result)
             
-            switch result {
-            case .success(let products):
-                /// Cached response into database
-                self.productsPersistentRepository.saveRecentQuery(products: products) { _ in }
-                completion(.success(products))
-                
-            case .failure(let networkError):
-                self.retriveFormDataBaseRepo(networkError: networkError, completion: completion)
-            }
-            
-        }
-    }
-    
-    private func retriveFormDataBaseRepo(networkError: Error ,completion: @escaping (Result<ProductsPage, Error>) -> Void) {
-        self.productsPersistentRepository.fetchRecentsQueries { result in
-            switch result {
-            case .success(let products):
-                completion(.success(products))
-                
-            case .failure:
-                completion(.failure(networkError))
-            }
+//            if case .success = result {
+//                guard let products = try? result.get() else { return }
+//                self.productsPersistentRepository.saveRecentProducts(products: products) { _ in }
+//            }
         }
     }
 }

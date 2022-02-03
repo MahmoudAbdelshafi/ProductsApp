@@ -265,7 +265,7 @@
 <tr class="covered">
 <td class="num">51</td>
 <td class="src"><pre><code class="objc">  private var contentWidth: CGFloat {</code></pre></td>
-<td class="coverage">48x</td>
+<td class="coverage">45x</td>
 </tr>
 <tr class="missed">
 <td class="num">52</td>
@@ -280,22 +280,22 @@
 <tr class="covered">
 <td class="num">54</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">48x</td>
+<td class="coverage">45x</td>
 </tr>
 <tr class="covered">
 <td class="num">55</td>
 <td class="src"><pre><code class="objc">    let insets = collectionView.contentInset</code></pre></td>
-<td class="coverage">48x</td>
+<td class="coverage">45x</td>
 </tr>
 <tr class="covered">
 <td class="num">56</td>
 <td class="src"><pre><code class="objc">    return collectionView.bounds.width - (insets.left + insets.right)</code></pre></td>
-<td class="coverage">48x</td>
+<td class="coverage">45x</td>
 </tr>
 <tr class="covered">
 <td class="num">57</td>
 <td class="src"><pre><code class="objc">  }</code></pre></td>
-<td class="coverage">48x</td>
+<td class="coverage">45x</td>
 </tr>
 <tr class="never">
 <td class="num">58</td>
@@ -310,17 +310,17 @@
 <tr class="covered">
 <td class="num">60</td>
 <td class="src"><pre><code class="objc">  override var collectionViewContentSize: CGSize {</code></pre></td>
-<td class="coverage">32x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">61</td>
 <td class="src"><pre><code class="objc">    return CGSize(width: contentWidth, height: contentHeight)</code></pre></td>
-<td class="coverage">32x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">62</td>
 <td class="src"><pre><code class="objc">  }</code></pre></td>
-<td class="coverage">32x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="never">
 <td class="num">63</td>
@@ -330,32 +330,32 @@
 <tr class="covered">
 <td class="num">64</td>
 <td class="src"><pre><code class="objc">  override func prepare() {</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">65</td>
 <td class="src"><pre><code class="objc">    // 1</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">66</td>
 <td class="src"><pre><code class="objc">      </code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">67</td>
 <td class="src"><pre><code class="objc">    guard</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">68</td>
 <td class="src"><pre><code class="objc">      cache.isEmpty == true,</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">69</td>
 <td class="src"><pre><code class="objc">      let collectionView = collectionView</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="missed">
 <td class="num">70</td>
@@ -370,87 +370,87 @@
 <tr class="covered">
 <td class="num">72</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">73</td>
 <td class="src"><pre><code class="objc">    // 2</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">74</td>
 <td class="src"><pre><code class="objc">    let columnWidth = contentWidth / CGFloat(numberOfColumns)</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">75</td>
 <td class="src"><pre><code class="objc">    var xOffset: [CGFloat] = []</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">76</td>
 <td class="src"><pre><code class="objc">    for column in 0..&lt;numberOfColumns {</code></pre></td>
-<td class="coverage">32x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">77</td>
 <td class="src"><pre><code class="objc">      xOffset.append(CGFloat(column) * columnWidth)</code></pre></td>
-<td class="coverage">32x</td>
+<td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">78</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">79</td>
 <td class="src"><pre><code class="objc">    var column = 0</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">80</td>
 <td class="src"><pre><code class="objc">    var yOffset: [CGFloat] = .init(repeating: 0, count: numberOfColumns)</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">81</td>
 <td class="src"><pre><code class="objc">      </code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">82</td>
 <td class="src"><pre><code class="objc">    // 3</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">83</td>
 <td class="src"><pre><code class="objc">    for item in 0..&lt;collectionView.numberOfItems(inSection: 0) {</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">84</td>
 <td class="src"><pre><code class="objc">      let indexPath = IndexPath(item: item, section: 0)</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">85</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">86</td>
 <td class="src"><pre><code class="objc">      // 4</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">87</td>
 <td class="src"><pre><code class="objc">      let photoHeight = delegate?.collectionView(</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">88</td>
 <td class="src"><pre><code class="objc">        collectionView,</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="missed">
 <td class="num">89</td>
@@ -460,97 +460,97 @@
 <tr class="covered">
 <td class="num">90</td>
 <td class="src"><pre><code class="objc">      let height = cellPadding * 2 + photoHeight</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">91</td>
 <td class="src"><pre><code class="objc">      let frame = CGRect(x: xOffset[column],</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">92</td>
 <td class="src"><pre><code class="objc">                         y: yOffset[column],</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">93</td>
 <td class="src"><pre><code class="objc">                         width: columnWidth,</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">94</td>
 <td class="src"><pre><code class="objc">                         height: height)</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">95</td>
 <td class="src"><pre><code class="objc">        let insetFrame = frame.insetBy(dx: cellPadding - 7, dy: cellPadding - 7)</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">96</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">97</td>
 <td class="src"><pre><code class="objc">      // 5</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">98</td>
 <td class="src"><pre><code class="objc">      let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">99</td>
 <td class="src"><pre><code class="objc">      attributes.frame = insetFrame</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">100</td>
 <td class="src"><pre><code class="objc">      cache.append(attributes)</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">101</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">102</td>
 <td class="src"><pre><code class="objc">      // 6</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">103</td>
 <td class="src"><pre><code class="objc">      contentHeight = max(contentHeight, frame.maxY)</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">104</td>
 <td class="src"><pre><code class="objc">      yOffset[column] = yOffset[column] + height</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">105</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">106</td>
 <td class="src"><pre><code class="objc">      column = column &lt; (numberOfColumns - 1) ? (column + 1) : 0</code></pre></td>
-<td class="coverage">80x</td>
+<td class="coverage">70x</td>
 </tr>
 <tr class="covered">
 <td class="num">107</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">108</td>
 <td class="src"><pre><code class="objc">  }</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="never">
 <td class="num">109</td>
@@ -560,57 +560,57 @@
 <tr class="covered">
 <td class="num">110</td>
 <td class="src"><pre><code class="objc">  override func layoutAttributesForElements(in rect: CGRect) -&gt; [UICollectionViewLayoutAttributes]? {</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">111</td>
 <td class="src"><pre><code class="objc">    var visibleLayoutAttributes: [UICollectionViewLayoutAttributes] = []</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">112</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">113</td>
 <td class="src"><pre><code class="objc">    // Loop through the cache and look for items in the rect</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">114</td>
 <td class="src"><pre><code class="objc">    for attributes in cache {</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">115</td>
 <td class="src"><pre><code class="objc">      if attributes.frame.intersects(rect) {</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">116</td>
 <td class="src"><pre><code class="objc">        visibleLayoutAttributes.append(attributes)</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">42x</td>
 </tr>
 <tr class="covered">
 <td class="num">117</td>
 <td class="src"><pre><code class="objc">      }</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">118</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">119</td>
 <td class="src"><pre><code class="objc">    return visibleLayoutAttributes</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="covered">
 <td class="num">120</td>
 <td class="src"><pre><code class="objc">  }</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">15x</td>
 </tr>
 <tr class="never">
 <td class="num">121</td>

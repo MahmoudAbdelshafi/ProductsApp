@@ -4,8 +4,16 @@
  * IOS14
  * XCode Version 13.1
  
+ #### Slather coverage
+ 
+ * Run this cmd to generate test covarage report
+ 
+ ```sh
+slather coverage --html  --scheme ProductsApp --show ./ProductsApp.xcodeproj/
 
-  ## OVERVIEW
+```
+
+ ## OVERVIEW
   - Products is a simple iOS App built using Clean Architecture and MVVM.
 
 ## High Level Layers
@@ -26,17 +34,29 @@
 * `Domain Layer` = `Entities` + `Use Cases` + `Repositories Interfaces`
 * `Data Repositories Layer` = `Repositories Implementations` + `API(Network)` + `Persistence DB`
 
+
 ##### Domain Layer
 * It contains Entities, FetchProductsUseCase which fetches the products data.
+* it contains Data Repositories Interfaces which are needed for Dependency Inversion.
+
 
 ##### Presentation Layer
 * Containts the productsViewModel with products data that are observed from the ProductsViewModel.
+
 **`ViewModel`** Contains the view controller business logic apstracted with INPUT and OUTPUT Protocol.
+* `Note` UI cannot have access to business logic or application logic (Business Models and UseCases), only ViewModels can do it. This is the separation of concerns. We cannot pass business models directly to the View (UI). This why we are mapping Business Models into ViewModel inside ViewModel and pass them to the View.
+
 * Containts Flow `Coordinator` for presentation logic.
+* `Note` Flow Coordinator for presentation logic, to reduce View Controllers’ size and responsibility.
+
 
 ##### Data Layer
 * Contains `Repositories` Implementaion, It conforms to interfaces defined inside Domain Layer.
+* `Note`  Data Layer conforms to interfaces defined inside Domain Layer in order to achieve (Dependency Inversion).
+
 * Contains the `DTO` and mapping objects.
+* `Note` Data Transfer Objects DTO is used as intermediate object for mapping from JSON response into Domain. Also for mapping data to the persistent storage.
+
 
 ##### Infrastructure Layer (Network)
 

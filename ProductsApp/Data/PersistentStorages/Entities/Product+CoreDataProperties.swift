@@ -37,7 +37,7 @@ extension Product : Identifiable {
 }
 
 extension Product {
-    static func toResponseDomain(_ savedProducts: [Product]) -> [ProductResponseDTO] {
+    static func toProductResponse(_ savedProducts: [Product]) -> [ProductResponseDTO] {
         var productsResponseArray = [ProductResponseDTO]()
         
         for product in savedProducts {
@@ -56,7 +56,7 @@ extension Product {
 }
 
 extension ProductResponseDTO {
-     func toProductEntityDomain(context: NSManagedObjectContext) -> Product? {
+     func toProductCoreDataEntityForInserting(context: NSManagedObjectContext) -> Product? {
         if let productEntity = Product.insertProductObject(context: context) as? Product {
             productEntity.price = Int16(self.price ?? 0)
             productEntity.productDescription = self.productDescription

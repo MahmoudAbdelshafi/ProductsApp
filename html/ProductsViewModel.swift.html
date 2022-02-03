@@ -7,9 +7,9 @@
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "ProductsViewModel.swift" : </span><span>Lines: </span><span class="cov_low">66.67%</span><span> Branches: </span><span class="cov_low">67.74%</span>
+<span>Coverage for "ProductsViewModel.swift" : </span><span>Lines: </span><span class="cov_medium">71.15%</span><span> Branches: </span><span class="cov_medium">70.97%</span>
 </h2>
-<h4 class="cov_subtitle">(34 of 51 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(37 of 52 relevant lines covered)</h4>
 <h4 class="cov_filepath">ProductsApp/Presentation/ProductsScenes/Products/ViewModel/ProductsViewModel.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -229,7 +229,7 @@
 </tr>
 <tr class="never">
 <td class="num">44</td>
-<td class="src"><pre><code class="objc">    private var totalPageCount: Int = 5</code></pre></td>
+<td class="src"><pre><code class="objc">    private var totalPageCount: Int = 200</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -260,17 +260,17 @@
 <tr class="covered">
 <td class="num">50</td>
 <td class="src"><pre><code class="objc">    let loading: Observable&lt;ProductsListViewModelLoading?&gt; = Observable(.none)</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">51</td>
 <td class="src"><pre><code class="objc">    var error: Observable&lt;String&gt; = Observable("")</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">52</td>
 <td class="src"><pre><code class="objc">    var products: Observable&lt;ProductsPage&gt; = Observable(ProductsPage(products: []))</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="never">
 <td class="num">53</td>
@@ -300,22 +300,22 @@
 <tr class="covered">
 <td class="num">58</td>
 <td class="src"><pre><code class="objc">         actions: ProductsViewModelActions? = nil) {</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">59</td>
 <td class="src"><pre><code class="objc">        self.fetchProductsUseCase = fetchProductsUseCase</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">60</td>
 <td class="src"><pre><code class="objc">        self.actions = actions</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">61</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="never">
 <td class="num">62</td>
@@ -335,17 +335,17 @@
 <tr class="covered">
 <td class="num">65</td>
 <td class="src"><pre><code class="objc">    private func load(loading: ProductsListViewModelLoading) {</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">66</td>
 <td class="src"><pre><code class="objc">        self.loading.value = loading</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">67</td>
 <td class="src"><pre><code class="objc">        firstTimeLoad ? Loader.show() : </code><code class="objc missed">Loader.hide()</code><code class="objc"></code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">68</td>
@@ -365,27 +365,27 @@
 <tr class="covered">
 <td class="num">71</td>
 <td class="src"><pre><code class="objc">            case .success(let products):</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">72</td>
 <td class="src"><pre><code class="objc">                self.appendPage(productsPage: products)</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">73</td>
 <td class="src"><pre><code class="objc">                </code></pre></td>
 <td class="coverage">9x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">74</td>
 <td class="src"><pre><code class="objc">            case .failure(let error):</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">75</td>
 <td class="src"><pre><code class="objc">                self.error.value = error.localizedDescription</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="covered">
 <td class="num">76</td>
@@ -405,7 +405,7 @@
 <tr class="covered">
 <td class="num">79</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="never">
 <td class="num">80</td>
@@ -415,27 +415,27 @@
 <tr class="covered">
 <td class="num">81</td>
 <td class="src"><pre><code class="objc">    private func appendPage(productsPage: ProductsPage) {</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">82</td>
 <td class="src"><pre><code class="objc">        firstTimeLoad = false</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">83</td>
 <td class="src"><pre><code class="objc">        self.products.value.products.append(contentsOf: productsPage.products)</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">84</td>
 <td class="src"><pre><code class="objc">        currentPage += 1</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="covered">
 <td class="num">85</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">8x</td>
 </tr>
 <tr class="never">
 <td class="num">86</td>
@@ -470,17 +470,17 @@
 <tr class="covered">
 <td class="num">92</td>
 <td class="src"><pre><code class="objc">    func viewDidLoad() {</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">93</td>
 <td class="src"><pre><code class="objc">        load(loading: .nextPage)</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">94</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="never">
 <td class="num">95</td>
@@ -585,55 +585,60 @@
 <tr class="covered">
 <td class="num">115</td>
 <td class="src"><pre><code class="objc">    func collectionViewHeight(indexPath: IndexPath) -&gt; Int {</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">116</td>
-<td class="src"><pre><code class="objc">        if let height = products.value.products[indexPath.row].image?.height {</code></pre></td>
-<td class="coverage">160x</td>
+<td class="src"><pre><code class="objc">        print("height: ", products.value.products[indexPath.row].image?.height)</code></pre></td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">117</td>
-<td class="src"><pre><code class="objc">            guard let discriptionCount = products.value.products[indexPath.row]</code></pre></td>
-<td class="coverage">160x</td>
+<td class="src"><pre><code class="objc">        if let height = products.value.products[indexPath.row].image?.height {</code></pre></td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">118</td>
-<td class="src"><pre><code class="objc">                    .productDescription?.count else </code><code class="objc missed">{ return 0 }</code><code class="objc"></code></pre></td>
-<td class="coverage">160x</td>
+<td class="src"><pre><code class="objc">            guard let discriptionCount = products.value.products[indexPath.row]</code></pre></td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="covered">
 <td class="num">119</td>
+<td class="src"><pre><code class="objc">                    .productDescription?.count else </code><code class="objc missed">{ return 300 }</code><code class="objc"></code></pre></td>
+<td class="coverage">140x</td>
+</tr>
+<tr class="covered">
+<td class="num">120</td>
 <td class="src"><pre><code class="objc">            return Int(height + ( discriptionCount * 2))</code></pre></td>
-<td class="coverage">160x</td>
+<td class="coverage">140x</td>
 </tr>
 <tr class="missed">
-<td class="num">120</td>
+<td class="num">121</td>
 <td class="src"><pre><code class="objc">        } else {</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">121</td>
-<td class="src"><pre><code class="objc">            return 0</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
 <td class="num">122</td>
-<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="src"><pre><code class="objc">            return 300</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
 <td class="num">123</td>
+<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">124</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="never">
-<td class="num">124</td>
+<td class="num">125</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">125</td>
+<td class="num">126</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>

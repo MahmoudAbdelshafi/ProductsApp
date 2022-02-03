@@ -19,7 +19,6 @@ struct Image: Decodable, Equatable {
     var url: String?
 }
 
-
 struct ProductsDTO {
     let products :[ProductResponseDTO]
 }
@@ -42,7 +41,7 @@ extension ProductsDTO {
 }
 
 extension ProductsDTO {
-   static func toProductEntityDomain(entities: [ProductEntity]) -> ProductsDTO {
+   static func toProductsDomain(entities: [ProductEntity]) -> ProductsDTO {
         var products = [ProductResponseDTO]()
 
         for product in entities {

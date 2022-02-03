@@ -43,7 +43,8 @@ extension CoreDataProductsResponseStorage: ProductsResponseStorage {
             do {
                 let fetchRequest = Product.fetchRequest()
                 let requestEntity = try context.fetch(fetchRequest)
-                let coreDataDTO = Product.toResponseDomain(requestEntity)
+                var coreDataDTO = Product.toProductResponse(requestEntity)
+                coreDataDTO.removeAll(where: { product in {product.image?.height == 0}()})
                 completion(.success(coreDataDTO))
             } catch {
                 completion(.failure(CoreDataStorageError.readError(error)))
@@ -56,7 +57,7 @@ extension CoreDataProductsResponseStorage: ProductsResponseStorage {
         coreDataStorage.performBackgroundTask { context in
             self.clearData()
             for product in response.products {
-                if let _ = product.toProductEntityDomain(context: context) {
+                if let _ = product.toProductCoreDataEntityForInserting(context: context) {
                     do {
                         try context.save()
                     } catch {

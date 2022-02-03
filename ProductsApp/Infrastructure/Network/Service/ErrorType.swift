@@ -15,8 +15,9 @@ enum ErrorType: Error {
     case validationError
     case serverError
     case defaultError
-    case errorMessage(_ error: String)
     case decodingError
+    case noInternet
+    case error(Error)
     
     var errorDescription: String? {
         switch self {
@@ -30,10 +31,12 @@ enum ErrorType: Error {
             return "Internal Server Error"
         case .defaultError:
             return "Something went wrong."
-        case .errorMessage(let error):
-            return error
         case .decodingError:
             return "Couldn't decode data!"
+        case .noInternet:
+            return "No Internet Connection"
+        case .error:
+            return self.localizedDescription
         }
     }
 }

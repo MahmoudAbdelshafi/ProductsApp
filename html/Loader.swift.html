@@ -70,17 +70,17 @@
 <tr class="covered">
 <td class="num">12</td>
 <td class="src"><pre><code class="objc">    static func show() {</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">13</td>
 <td class="src"><pre><code class="objc">        LoadingOverlay.shared.showOverlay()</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">14</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">15</td>
@@ -150,32 +150,32 @@
 <tr class="covered">
 <td class="num">28</td>
 <td class="src"><pre><code class="objc">    class var shared: LoadingOverlay {</code></pre></td>
-<td class="coverage">18x</td>
+<td class="coverage">19x</td>
 </tr>
 <tr class="covered">
 <td class="num">29</td>
 <td class="src"><pre><code class="objc">        struct Static {</code></pre></td>
-<td class="coverage">18x</td>
+<td class="coverage">19x</td>
 </tr>
 <tr class="covered">
 <td class="num">30</td>
 <td class="src"><pre><code class="objc">            static let instance: LoadingOverlay = LoadingOverlay()</code></pre></td>
-<td class="coverage">18x</td>
+<td class="coverage">19x</td>
 </tr>
 <tr class="covered">
 <td class="num">31</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">18x</td>
+<td class="coverage">19x</td>
 </tr>
 <tr class="covered">
 <td class="num">32</td>
 <td class="src"><pre><code class="objc">        return Static.instance</code></pre></td>
-<td class="coverage">18x</td>
+<td class="coverage">19x</td>
 </tr>
 <tr class="covered">
 <td class="num">33</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">18x</td>
+<td class="coverage">19x</td>
 </tr>
 <tr class="never">
 <td class="num">34</td>
@@ -290,42 +290,42 @@
 <tr class="covered">
 <td class="num">56</td>
 <td class="src"><pre><code class="objc">    public func showOverlay() {</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">57</td>
 <td class="src"><pre><code class="objc">        let view = UIApplication.shared.connectedScenes</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">58</td>
 <td class="src"><pre><code class="objc">            .filter({$0.activationState == .foregroundActive})</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">59</td>
 <td class="src"><pre><code class="objc">            .map({$0 as? UIWindowScene})</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">60</td>
 <td class="src"><pre><code class="objc">            .compactMap({$0})</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">61</td>
 <td class="src"><pre><code class="objc">            .first?.windows</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">62</td>
 <td class="src"><pre><code class="objc">            .filter({$0.isKeyWindow}).first</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">63</td>
 <td class="src"><pre><code class="objc">        //        let view = UIApplication.shared.keyWindow</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">64</td>
@@ -335,17 +335,17 @@
 <tr class="covered">
 <td class="num">65</td>
 <td class="src"><pre><code class="objc">        view?.addSubview(containerView)</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">66</td>
 <td class="src"><pre><code class="objc">        activityIndicator.startAnimating()</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="covered">
 <td class="num">67</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">9x</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="never">
 <td class="num">68</td>

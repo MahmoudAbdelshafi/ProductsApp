@@ -18,6 +18,10 @@ class FetchProductsUseCaseTests: XCTestCase {
         return productsDTO
     }()
     
+    enum  ProductsRepositoryTestError: Error {
+        case failedFetching
+    }
+    
     struct ProductsRepositoryMock: ProductsRepository {
         var result: Result<ProductsPage, Error>
         func fetchProductsList(completion: @escaping (Result<ProductsPage, Error>) -> Void) {
@@ -26,15 +30,14 @@ class FetchProductsUseCaseTests: XCTestCase {
     }
     
     struct ProductsPersistentRepositoryMock: ProductsPersistentRepository {
-        func fetchRecentsQueries(completion: @escaping (Result<ProductsPage, Error>) -> Void) {
-            
+        var productsPage = ProductsPage(products: [])
+        func fetchRecentProducts(completion: @escaping (Result<ProductsPage, Error>) -> Void) {
+            completion(.success(productsPage))
         }
         
-        func saveRecentQuery(products: ProductsPage, completion: @escaping (Result<ProductsPage, Error>) -> Void) {
-            
+        func saveRecentProducts(products: ProductsPage, completion: @escaping (Result<ProductsPage, Error>) -> Void) {
+            completion(.success(productsPage))
         }
-        
-        
     }
     
     func testFetchProductsUseCase_whenSuccessfullyFetchesProducts() {
@@ -56,6 +59,40 @@ class FetchProductsUseCaseTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertTrue(recents.products.first?.image?.height == 200)
         XCTAssertTrue(recents.products.first?.image?.width == 300)
+    }
+    
+    func testFetchProductsUseCase_whenFailsFetchingProducts_thenGetDataFormDatabase() {
+        
+        //Arrange
+        let expectation = self.expectation(description: "Fetch Products should return error")
+        expectation.expectedFulfillmentCount = 2
+        let repo = ProductsRepositoryMock(result:.failure(ProductsRepositoryTestError.failedFetching))
+        let productPage = FetchProductsUseCaseTests.productsPages
+        let pressistentRepo = ProductsPersistentRepositoryMock(productsPage: productPage)
+        let _ = DefaultFetchTopStoriesUseCase(productsRepository: repo, productsPersistentRepository: pressistentRepo)
+        
+        // Act
+        var recents = ProductsPage(products: [])
+        var recentsFromDataBase = ProductsPage(products: [])
+        repo.fetchProductsList { result in
+            expectation.fulfill()
+            switch result {
+            case .success(let products):
+                recents = products
+                
+            case .failure(_):
+                pressistentRepo.fetchRecentProducts { result in
+                    recentsFromDataBase = (try? result.get()) ?? ProductsPage(products: [])
+                    expectation.fulfill()
+                }
+            }
+        }
+        
+        //Assert
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertTrue(recents.products.isEmpty)
+        XCTAssertTrue(recentsFromDataBase.products.first?.image?.height == 200)
+        XCTAssertTrue(recentsFromDataBase.products.first?.image?.width == 300)
     }
     
 }

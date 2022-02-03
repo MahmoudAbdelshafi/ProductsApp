@@ -7,9 +7,9 @@
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "UIVIew+Borders.swift" : </span><span>Lines: </span><span class="cov_low">36.00%</span><span> Branches: </span><span class="cov_low">38.46%</span>
+<span>Coverage for "UIVIew+Borders.swift" : </span><span>Lines: </span><span class="cov_low">47.37%</span><span> Branches: </span><span class="cov_low">45.45%</span>
 </h2>
-<h4 class="cov_subtitle">(9 of 25 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(9 of 19 relevant lines covered)</h4>
 <h4 class="cov_filepath">ProductsApp/Presentation/Utils/Extensions/UIVIew+Borders.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -69,7 +69,7 @@
 </tr>
 <tr class="never">
 <td class="num">12</td>
-<td class="src"><pre><code class="objc">    var cornerRadius: CGFloat {</code></pre></td>
+<td class="src"><pre><code class="objc">    var borderWidth: CGFloat {</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="missed">
@@ -79,7 +79,7 @@
 </tr>
 <tr class="missed">
 <td class="num">14</td>
-<td class="src"><pre><code class="objc">            return layer.cornerRadius</code></pre></td>
+<td class="src"><pre><code class="objc">            return layer.borderWidth</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
@@ -87,20 +87,20 @@
 <td class="src"><pre><code class="objc">        }</code></pre></td>
 <td class="coverage">!</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">16</td>
 <td class="src"><pre><code class="objc">        set {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">28x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">17</td>
-<td class="src"><pre><code class="objc">            layer.cornerRadius = newValue</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">            layer.borderWidth = newValue</code></pre></td>
+<td class="coverage">28x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">18</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">28x</td>
 </tr>
 <tr class="never">
 <td class="num">19</td>
@@ -119,7 +119,7 @@
 </tr>
 <tr class="never">
 <td class="num">22</td>
-<td class="src"><pre><code class="objc">    var borderWidth: CGFloat {</code></pre></td>
+<td class="src"><pre><code class="objc">    var borderColor: UIColor? {</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="missed">
@@ -129,121 +129,71 @@
 </tr>
 <tr class="missed">
 <td class="num">24</td>
-<td class="src"><pre><code class="objc">            return layer.borderWidth</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
-<td class="num">25</td>
-<td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="covered">
-<td class="num">26</td>
-<td class="src"><pre><code class="objc">        set {</code></pre></td>
-<td class="coverage">16x</td>
-</tr>
-<tr class="covered">
-<td class="num">27</td>
-<td class="src"><pre><code class="objc">            layer.borderWidth = newValue</code></pre></td>
-<td class="coverage">16x</td>
-</tr>
-<tr class="covered">
-<td class="num">28</td>
-<td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">16x</td>
-</tr>
-<tr class="never">
-<td class="num">29</td>
-<td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">30</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">31</td>
-<td class="src"><pre><code class="objc">    @IBInspectable</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">32</td>
-<td class="src"><pre><code class="objc">    var borderColor: UIColor? {</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="missed">
-<td class="num">33</td>
-<td class="src"><pre><code class="objc">        get {</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
-<td class="num">34</td>
 <td class="src"><pre><code class="objc">            if let color = layer.borderColor {</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">35</td>
+<td class="num">25</td>
 <td class="src"><pre><code class="objc">                return UIColor(cgColor: color)</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">36</td>
+<td class="num">26</td>
 <td class="src"><pre><code class="objc">            }</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">37</td>
+<td class="num">27</td>
 <td class="src"><pre><code class="objc">            return nil</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">38</td>
+<td class="num">28</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="covered">
-<td class="num">39</td>
+<td class="num">29</td>
 <td class="src"><pre><code class="objc">        set {</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">28x</td>
 </tr>
 <tr class="covered">
-<td class="num">40</td>
+<td class="num">30</td>
 <td class="src"><pre><code class="objc">            if let color = newValue {</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">28x</td>
 </tr>
 <tr class="covered">
-<td class="num">41</td>
+<td class="num">31</td>
 <td class="src"><pre><code class="objc">                layer.borderColor = color.cgColor</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">28x</td>
 </tr>
 <tr class="covered">
-<td class="num">42</td>
+<td class="num">32</td>
 <td class="src"><pre><code class="objc">            } else </code><code class="objc missed">{</code><code class="objc"></code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">28x</td>
 </tr>
 <tr class="missed">
-<td class="num">43</td>
+<td class="num">33</td>
 <td class="src"><pre><code class="objc">                layer.borderColor = nil</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="covered">
-<td class="num">44</td>
+<td class="num">34</td>
 <td class="src"><pre><code class="objc">            }</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">28x</td>
 </tr>
 <tr class="covered">
-<td class="num">45</td>
+<td class="num">35</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">16x</td>
+<td class="coverage">28x</td>
 </tr>
 <tr class="never">
-<td class="num">46</td>
+<td class="num">36</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">47</td>
+<td class="num">37</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>

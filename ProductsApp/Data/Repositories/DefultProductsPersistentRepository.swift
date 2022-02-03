@@ -19,7 +19,7 @@ final class DefultProductsPersistentRepository {
 
 extension DefultProductsPersistentRepository: ProductsPersistentRepository {
     
-    func fetchRecentsQueries(completion: @escaping (Result<ProductsPage, Error>) -> Void) {
+    func fetchRecentProducts(completion: @escaping (Result<ProductsPage, Error>) -> Void) {
         do {
             productsResponseStorage.getResponse { result in
                 switch result {
@@ -39,11 +39,9 @@ extension DefultProductsPersistentRepository: ProductsPersistentRepository {
         }
     }
     
-    func saveRecentQuery(products: ProductsPage, completion: @escaping (Result<ProductsPage, Error>) -> Void) {
-        let productsDTO = ProductsDTO.toProductEntityDomain(entities: products.products)
-        productsResponseStorage.save(response: productsDTO) { result in
-            
-        }
+    func saveRecentProducts(products: ProductsPage, completion: @escaping (Result<ProductsPage, Error>) -> Void) {
+        let productsDTO = ProductsDTO.toProductsDomain(entities: products.products)
+        productsResponseStorage.save(response: productsDTO) { _ in }
     }
     
 }

@@ -15,7 +15,7 @@ protocol BaseAPIProtocol {
 
 class BaseAPI: BaseAPIProtocol {
     
-    static var sharedInstance = BaseAPI()
+    static let sharedInstance = BaseAPI()
     
     private let config: URLSessionConfiguration
     private let session: URLSession
@@ -25,13 +25,14 @@ class BaseAPI: BaseAPIProtocol {
         session = URLSession(configuration: config)
     }
     
-    func request<T: Decodable>(router: Router, completion: @escaping (Result<T, ErrorType>) -> ()) {
+    func request<T: Decodable>(router: Router,
+                               completion: @escaping (Result<T, ErrorType>) -> ()) {
         let session = URLSession.shared
         do {
             let task = try session.dataTask(with: router.request()) { (data, urlResponse, error) in
                 DispatchQueue.main.async {
                     if let error = error {
-                        completion(.failure(.errorMessage(error.localizedDescription)))
+                        completion(.failure(.error(error)))
                         return
                     }
                     ///Check for response.....
@@ -59,7 +60,7 @@ class BaseAPI: BaseAPIProtocol {
             task.resume()
             
         } catch let error {
-            completion(.failure(ErrorType.errorMessage(error.localizedDescription)))
+            completion(.failure(.error(error)))
         }
         
     }
